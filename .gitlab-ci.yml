@@ -2,6 +2,7 @@ image: node:latest
 stages:
   - install
   - test
+  - build
 install:
   stage: install
   script: npm install
@@ -15,3 +16,8 @@ test:
   dependencies:
     - install
   script: npm test
+build:
+  stage: build
+  dependencies:
+    - install
+  script: npm run build
